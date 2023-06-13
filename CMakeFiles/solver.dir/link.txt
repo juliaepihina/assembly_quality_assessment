@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/solver.dir/solver/main.cpp.o CMakeFiles/solver.dir/solver/simulated_annealing.cpp.o CMakeFiles/solver.dir/solver/utility.cpp.o -o /mnt/c/Users/gorshkov_aa/tester_1/bin/solver 

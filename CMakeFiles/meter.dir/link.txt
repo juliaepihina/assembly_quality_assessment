@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/meter.dir/meter/main.cpp.o CMakeFiles/meter.dir/meter/levenshtein.cpp.o CMakeFiles/meter.dir/meter/ssw.c.o CMakeFiles/meter.dir/meter/ssw_cpp.cpp.o -o /mnt/c/Users/gorshkov_aa/tester_1/bin/meter 

@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/tester.dir/tester/main.cpp.o CMakeFiles/tester.dir/tester/assembly.cpp.o CMakeFiles/tester.dir/tester/sequencing.cpp.o CMakeFiles/tester.dir/tester/utility.cpp.o -o /mnt/c/Users/gorshkov_aa/tester_1/bin/tester 
