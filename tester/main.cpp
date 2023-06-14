@@ -117,24 +117,21 @@ double calculate_N50(std::vector<int> contig_lengths) {
     return 0;
 }
 
-int calculate_L50(vector<int> contig_lengths)
+double calculate_L50(vector<int> contig_lengths)
 {
-    int genome_size = accumulate(contig_lengths.begin(), contig_lengths.end(), 0);
-    int half_genome_size = genome_size / 2;
-    int l50 = 0;
-    int running_total = 0;
-
-    for (int size : contig_lengths)
-    {
-        running_total += size;
-        if (running_total >= half_genome_size)
-        {
-            l50 = size;
+    sort(contig_lengths.begin(), contig_lengths.end(), greater<int>());
+    int total_sum = accumulate(contig_lengths.begin(), contig_lengths.end(), 0);
+    int half_sum = total_sum / 2;
+    int current_sum = 0;
+    int L50 = 0;
+    for (int value : contig_lengths) {
+        current_sum += value;
+        L50 += 1;
+        if (current_sum >= half_sum) {
             break;
         }
     }
-
-    return l50;
+    return L50;
 }
 
 
@@ -250,13 +247,19 @@ void grade(string sf, string rf) {
     int mismatch_score = -1;
     tuple<int, string, string> result = needlemanWunsch(seq1, seq2, gap_penalty, mismatch_score, match_score);
     string res2 = get<2>(result);
+    int count = 1;
+    for (int i = 0; i < res2.length(); i++) {
+        if (res2[i] == '-') {
+            count++;
+        }
+    }
 
     //cout << "��������� ��������� ��������-�����: " << res2 << "\n";
     
-    double N50_1 = calculate_N50(countFragmentsLengths(res2));
+    double N50_1 = calculate_N50(countFragmentsLengths(res2)) / seq2.length();
     cout << "N50: " << N50_1 << "\n";
 
-    int L50_1 = calculate_L50(countFragmentsLengths(res2));
+    double L50_1 = calculate_L50(countFragmentsLengths(res2)) / count;
     cout << "L50: " << L50_1 << "\n";
 
     cout << "����������� \n";
