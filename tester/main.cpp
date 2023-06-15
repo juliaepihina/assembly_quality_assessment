@@ -259,7 +259,7 @@ void grade(string sf, string rf) {
     double N50_1 = calculate_N50(countFragmentsLengths(res2)) / seq2.length();
     cout << "N50: " << N50_1 << "\n";
 
-    double L50_1 = calculate_L50(countFragmentsLengths(res2)) / count;
+    double L50_1 = 1 - calculate_L50(countFragmentsLengths(res2)) / count;
     cout << "L50: " << L50_1 << "\n";
 
     cout << "����������� \n";
