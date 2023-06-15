@@ -22,7 +22,7 @@ std::string read_all(std::ifstream& in) {
 }
 
 
-const int MAXN = 1000; // ������������ ����� �������������������
+const int MAXN = 10000; // ������������ ����� �������������������
 const int INF = 1e9; // ����������� ��������
 
 int dp[MAXN][MAXN]; // DP �������
